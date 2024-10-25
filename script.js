@@ -39,7 +39,7 @@ yearCell.textContent = album.productionYear
 const trackListCell = newRow.insertCell(4);
 const toggleButton = document.createElement('button'); //Oprettelse af knap
 trackListCell.appendChild(toggleButton); //Tilføjer knappen til trackListCell
-toggleButton.textContent = 'Vis tracklist' //Tekst til knappen
+toggleButton.textContent = 'Vis Tracklist' //Tekst til knappen
 
 //Opretter en klik begivenhed for at kunne vise trackList
 toggleButton.onclick = function(){
@@ -52,7 +52,30 @@ function toggletrackList(button, album){
   const trackListBox = document.getElementById('trackListBox');
   const trackListContent = trackListBox.querySelector('.tracklist-content');
 
+/*Opdatering af knap, så tracklist fjernes, hvis der klikkes på en anden knap
+Henter alle rækker fra tabellen.
+Her laver jeg en arrow function, fordi jeg laver en forEach iteration. 
+Funktionen er simpel og har kun ét formål hvilket at tjekke og ændre knaptekst
+*/
+const allRows = document.querySelectorAll("#tabelBody tbody tr")
+  allRows.forEach(function(row) {  
+    const btn = row.querySelector('button');
+    if (btn !== button) { 
+        btn.textContent = "Vis Trackliste";
+    }
+});
+
+if(button.textContent === 'Skjul Trackliste'){
+  trackListContent.innerHTML = ''
+  button.textContent = 'Vis Trackliste'
+} else {
+  button.textContent = "Skjul Trackliste"; 
+    displayTracklist(tracklistContent, album); 
+    trackListBox.style.display = "block"; 
 }
+
+}
+
 
 // Funktion til at hente data fra en URL
 async function fetchContent(url) {
