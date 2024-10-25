@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="da">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Musikarkiv</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Linker til CSS-filen -->
 </head>
 <body>
     <h1>Musikarkiv</h1>
-    <table id="albumTable">
-        <thead>
-          <tr>
-            <th>Artist Navn</th>
-            <th>Album Navn</th>
-            <th>Genre</th>
-            <th>Produktions år</th>
-            <th>Mere information</th>
-          </tr>
-        </thead>
-        <tbody>
-          <!-- Album data vil blive tilføjet her -->
-        </tbody>
-      </table>
-      <div id="tracklistBox">
-        <h2>Trackliste:</h2>
-        <div class="tracklist-content"></div>
-      </div>
-    <script src="script.js"></script>
+    
+    <!-- Container div til at holde både albumtabel og tracklistBox -->
+    <div id="musicArchiveContainer">
+        <table id="albumTable">
+            <thead>
+                <tr>
+                    <th>Artist Navn</th>
+                    <th>Album Navn</th>
+                    <th>Genre</th>
+                    <th>Produktions år</th>
+                    <th>Mere information</th>
+                </tr>
+            </thead>
+            <tbody>
+              <!-- Album data vil blive tilføjet her -->
+            </tbody>
+        </table>
+
+        <div id="tracklistBox">
+            <h2>Trackliste:</h2>
+            <div class="tracklist-content"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script> <!-- Linker til JavaScript-filen -->
 </body>
 </html>
