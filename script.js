@@ -49,10 +49,13 @@ toggleButton.onclick = function(){
 }
 
 };
-//
+// Denne funktion håndterer visning og skjulning af tracklisten for et album, 
+// når der klikkes på den tilknyttede knap. 
+// Funktionen henter de nødvendige DOM-elementer, 
 function toggletrackList(button, album){
-  const trackListBox = document.getElementById("tracklistBox");
-  const trackListContent = trackListBox.querySelector(".tracklist-content");
+  const trackListBox = document.getElementById("tracklistBox"); // Henter elementet med id 'tracklistBox', som indeholder tracklisten.
+  const trackListContent = trackListBox.querySelector(".tracklist-content"); // Henter det specifikke indholdselement for tracklisten inden i trackListBox.
+
 
 /*Opdatering af knap, så tracklist fjernes, hvis der klikkes på en anden knap
 Henter alle rækker fra tabellen.
