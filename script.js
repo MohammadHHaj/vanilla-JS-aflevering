@@ -1,3 +1,4 @@
+
 //Lavet Album-objekt, samt strukturen for albummet.
 function Album(artistName, albumName, genre, productionYear, tracklist) {
   // Initialisering af Album-objektets egenskaber

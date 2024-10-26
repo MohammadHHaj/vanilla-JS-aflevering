@@ -54,8 +54,7 @@ button {
 
 button:hover {
     background-color: #3182ce; /* Ændrer baggrundsfarven, når man holder musen over knappen */
+    transform: scale(1.05); /* Gør knappen lidt større, når den er aktiv */
 }
 
-button.active {
-    transform: scale(1.1); /* Gør knappen lidt større, når den er aktiv */
-}
+
