@@ -1,68 +1,60 @@
-
 th, td {
-    border: 1px solid #e2e8f0;
-    padding: 12px;
-    text-align: left;
+    border: 1px solid #e2e8f0; /* Sætter en grænse om cellerne, så de ser pæne ud */
+    padding: 12px; /* Giver lidt plads inde i cellerne */
+    text-align: left; /* Justerer teksten til venstre, så det ser bedre ud */
 }
 
 th {
-    background-color: #edf2f7;
-    font-weight: bold;
+    background-color: #edf2f7; /* Giver overskrifterne en lys baggrundsfarve */
+    font-weight: bold; /* Gør teksten i overskrifterne fed, så de skiller sig ud */
 }
 
 #albumTable {
-    width: 45%; 
-    border-collapse: collapse;
-    margin-top: 16px;
-    background-color: #ffffff;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.6);
-    margin-left: 35px;
-    
+    width: 65%; /* Sætter bredden af tabellen til 45% af sin beholder */
+    border-collapse: collapse; /* Fjerner mellemrum mellem cellerne, så det ser mere samlet ud */
+    margin-top: 16px; /* Lægger lidt plads ovenfor tabellen */
+    background-color: #ffffff; /* Sætter baggrundsfarven til hvid */
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.6); /* Giver tabellen lidt skygge for dybde */
+    margin-left: 35px; /* Lægger lidt plads til venstre for tabellen */
 }
 
 #tracklistBox {
-    
-    width: 45%; 
-    background-color: #f7fafc;
-    border: 1px solid #e2e8f0;
-    padding: 16px;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.6);
-    margin-top: 16px;
-    margin-right: 35px;
-
+    width: 25%; /* Giver tracklist-boksen samme bredde som tabellen */
+    background-color: #f7fafc; /* Sætter en lys blågrå farve som baggrund */
+    border: 1px solid #e2e8f0; /* Sætter en grænse rundt om boksen */
+    padding: 16px; /* Lægger lidt plads indeni boksen */
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.6); /* Tilføjer skygge for et mere visuelt udtryk */
+    margin-top: 16px; /* Lægger plads ovenfor boksen */
+    margin-right: 35px; /* Lægger plads til højre for boksen */
 }
 
 #musicArchiveContainer {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: flex-start; 
+    display: flex; /* Gør containeren til en flexbox, så elementerne kan placeres pænt */
+    justify-content: space-between; /* Fordeler elementerne med plads imellem */
+    align-items: flex-start; /* Justerer elementerne, så de starter fra toppen */
 }
 
 h1, h2, h3 {
-    text-align: center;
-    color: #2b6cb0;
-}
-
-.tracklist-content, li {
-    text-align: left; 
+    text-align: center; /* Centrerer overskrifterne, så de ser bedre ud */
+    color: #2b6cb0; /* Giver overskrifterne en blå farve */
 }
 
 ul {
-    
-    list-style: none;
-    
+    list-style: none; /* Fjerner punkttegn fra ul-elementet */
 }
 
 button {
-    background-color: #2b6cb0;
-    color: white;
-    border: none;
-    border-radius: 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    background-color: #2b6cb0; /* Giver knappen en blå baggrund */
+    color: white; /* Sætter teksten i knappen til hvid */
+    border: none; /* Fjerner standard kantlinje fra knappen */
+    border-radius: 15px; /* Giver knappen rundede hjørner */
+    cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
+    transition: background-color 0.3s; /* Giver en glidende overgang, når baggrundsfarven ændres */
 }
 
 button:hover {
-    background-color: #3182ce;
+    background-color: #3182ce; /* Ændrer baggrundsfarven, når man holder musen over knappen */
+    transform: scale(1.05); /* Gør knappen lidt større, når den er aktiv */
 }
+
 

@@ -1,3 +1,4 @@
+
 //Lavet Album-objekt, samt strukturen for albummet.
 function Album(artistName, albumName, genre, productionYear, tracklist) {
   // Initialisering af Album-objektets egenskaber
@@ -48,10 +49,13 @@ toggleButton.onclick = function(){
 }
 
 };
-//
+// Denne funktion håndterer visning og skjulning af tracklisten for et album, 
+// når der klikkes på den tilknyttede knap. 
+// Funktionen henter de nødvendige DOM-elementer, 
 function toggletrackList(button, album){
-  const trackListBox = document.getElementById("tracklistBox");
-  const trackListContent = trackListBox.querySelector(".tracklist-content");
+  const trackListBox = document.getElementById("tracklistBox"); // Henter elementet med id 'tracklistBox', som indeholder tracklisten.
+  const trackListContent = trackListBox.querySelector(".tracklist-content"); // Henter det specifikke indholdselement for tracklisten inden i trackListBox.
+
 
 /*Opdatering af knap, så tracklist fjernes, hvis der klikkes på en anden knap
 Henter alle rækker fra tabellen.
@@ -72,10 +76,12 @@ Og for at vise tracklisten for albummet.
 if(button.textContent === "Skjul Trackliste") {
   trackListContent.innerHTML = '';
   button.textContent = "Vis Trackliste";
+  button.classList.remove('active'); // Fjerner klassen, når tracklisten skjules
+  
 } else {
   button.textContent = "Skjul Trackliste"; 
-    displayTracklist(trackListContent, album); 
-   // trackListBox.style.display = "block"; 
+    displayTracklist(trackListContent, album);
+    button.classList.add('active'); // Tilføjer klassen, når tracklisten vises
 }
 }
 //opretter funktionen for at vise tracklisten for albummet.
@@ -85,37 +91,39 @@ function displayTracklist(trackListContent, album){
 
 /*
 Opretter en overskrift til tracklisten
-Lavet en
+Lavet en overskrift til tracklist navnet.
 */
 const albumInfo = document.createElement('h3')
 albumInfo.textContent = (`${album.artistName} - ${album.albumName}`); //overskriften kommer til at være artistnavn og albumnavn.
 trackListContent.appendChild(albumInfo);
 
-if (album.tracklist && album.tracklist.length > 0){
-  const trackList = document.createElement('ul');
-  for(let i = 0; i < album.tracklist.length; i++){
-    const track = album.tracklist[i];
-    const trackHeader = document.createElement('li');
-    trackHeader.textContent = (`${track.trackNumber}. ${track.trackTitle}.`)
-    trackList.appendChild(trackHeader)
+
+// Tjekker om albumet har en tracklist, og at den ikke er tom. 
+// Dette sikrer, at der kun oprettes en liste, hvis der rent faktisk er tracks at vise.
+if (album.tracklist && album.tracklist.length > 0) { 
+  const trackList = document.createElement('ul'); // Opretter en ul-element for at indeholde tracklisten
+  
+  // Itererer gennem hvert track i tracklisten. 
+  // Loopet gør det muligt at oprette et listeelement for hvert track, så vi kan vise alle numre i albummet.
+  for (let i = 0; i < album.tracklist.length; i++) { 
+    const track = album.tracklist[i]; // Henter det aktuelle track fra tracklisten
+    const trackHeader = document.createElement('li'); // Opretter en li-element for hvert track
+    trackHeader.textContent = (`${track.trackNumber}. ${track.trackTitle}.`); // Sætter tekstindholdet til tracknummer og titel
+    trackList.appendChild(trackHeader); // Tilføjer trackHeader til trackList
   }
-  trackListContent.appendChild(trackList)
-  }
+  trackListContent.appendChild(trackList); // Tilføjer den samlede trackliste til trackListContent
 }
 
-// Funktion til at hente data fra en URL
+}
+//Magic-spell kopieret
 async function fetchContent(url) {
-  const response = await fetch(url); // Sender HTTP-anmodning for at hente data fra den angivne URL
-  const json = await response.json(); // Konverterer svaret til JSON-format
-  //console.log("Data hentet fra:", url); // Logger hentning af data
-  return json; // Returnerer den hentede JSON-data
+  const response = await fetch(url);
+  const json = await response.json();
+  return json;
 }
 
-// Hovedfunktion til at indlæse og vise data fra albums.json
 fetchContent("albums.json").then(function(albums) {
-  //console.log("Original Data:", albums); // Logger de originale data til konsollen for debugging
   for (let i = 0; i < albums.length; i++) {
-    // Opretter et nyt Album-objekt for hvert album i dataene
     const album = new Album(
       albums[i].artistName,
       albums[i].albumName,
@@ -123,8 +131,7 @@ fetchContent("albums.json").then(function(albums) {
       albums[i].productionYear,
       albums[i].trackList
     );
-    
-    //console.log("Album oprettet:", album); // Logger oprettelsen af hvert album
+
     addAlbumToTable(album); // Tilføjer det oprettede album til tabellen
   }
 });
