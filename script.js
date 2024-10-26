@@ -115,7 +115,7 @@ if (album.tracklist && album.tracklist.length > 0) {
 }
 
 }
-
+//Magic-spell kopieret
 async function fetchContent(url) {
   const response = await fetch(url);
   const json = await response.json();
