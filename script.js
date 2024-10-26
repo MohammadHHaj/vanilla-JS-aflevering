@@ -72,10 +72,12 @@ Og for at vise tracklisten for albummet.
 if(button.textContent === "Skjul Trackliste") {
   trackListContent.innerHTML = '';
   button.textContent = "Vis Trackliste";
+  button.classList.remove('active'); // Fjerner klassen, når tracklisten skjules
+  
 } else {
   button.textContent = "Skjul Trackliste"; 
-    displayTracklist(trackListContent, album); 
-   // trackListBox.style.display = "block"; 
+    displayTracklist(trackListContent, album);
+    button.classList.add('active'); // Tilføjer klassen, når tracklisten vises
 }
 }
 //opretter funktionen for at vise tracklisten for albummet.
@@ -125,7 +127,7 @@ fetchContent("albums.json").then(function(albums) {
       albums[i].productionYear,
       albums[i].trackList
     );
-    
+
     addAlbumToTable(album); // Tilføjer det oprettede album til tabellen
   }
 });
