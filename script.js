@@ -11,7 +11,7 @@ function Album(artistName, albumName, genre, productionYear, tracklist) {
 
 //tilføjer album til tabellen
 function addAlbumToTable(album){
-  console.log('album oprettet', album.length); //Tjekker hvis der er albummene blev tilføjet korrekt, der burde at være 10.
+  console.log('album oprettet', album); //Tjekker hvis der er albummene blev tilføjet korrekt, der burde at være 10.
 
 //Henter tabelBody, fra albumtabellen for at kunne tilføje rækker til den.
 const tableBody = document.getElementById("albumTable").getElementsByTagName("tbody")[0];
@@ -84,8 +84,9 @@ if(button.textContent === "Skjul Trackliste") {
     button.classList.add('active'); // Tilføjer klassen, når tracklisten vises
 }
 }
+
 //opretter funktionen for at vise tracklisten for albummet.
-function displayTracklist(trackListContent, album){
+function displayTracklist(trackListContent, album) {
   trackListContent.innerHTML = '';
   console.log("Viser trackliste for:", album.albumName);
 
@@ -93,27 +94,48 @@ function displayTracklist(trackListContent, album){
 Opretter en overskrift til tracklisten
 Lavet en overskrift til tracklist navnet.
 */
-const albumInfo = document.createElement('h3')
-albumInfo.textContent = (`${album.artistName} - ${album.albumName}`); //overskriften kommer til at være artistnavn og albumnavn.
-trackListContent.appendChild(albumInfo);
-
+  const albumInfo = document.createElement('h3');
+  albumInfo.textContent = `${album.artistName} - ${album.albumName}`; //overskriften kommer til at være artistnavn og albumnavn.
+  trackListContent.appendChild(albumInfo);
 
 // Tjekker om albumet har en tracklist, og at den ikke er tom. 
 // Dette sikrer, at der kun oprettes en liste, hvis der rent faktisk er tracks at vise.
-if (album.tracklist && album.tracklist.length > 0) { 
-  const trackList = document.createElement('ul'); // Opretter en ul-element for at indeholde tracklisten
-  
-  // Itererer gennem hvert track i tracklisten. 
-  // Loopet gør det muligt at oprette et listeelement for hvert track, så vi kan vise alle numre i albummet.
-  for (let i = 0; i < album.tracklist.length; i++) { 
-    const track = album.tracklist[i]; // Henter det aktuelle track fra tracklisten
-    const trackHeader = document.createElement('li'); // Opretter en li-element for hvert track
-    trackHeader.textContent = (`${track.trackNumber}. ${track.trackTitle}.`); // Sætter tekstindholdet til tracknummer og titel
-    trackList.appendChild(trackHeader); // Tilføjer trackHeader til trackList
-  }
-  trackListContent.appendChild(trackList); // Tilføjer den samlede trackliste til trackListContent
-}
+  if (album.tracklist && album.tracklist.length > 0) {
+    const trackList = document.createElement('ul'); // Opretter et ul-element for at indeholde tracklisten
 
+    // Itererer gennem hvert track i tracklisten. 
+  // Loopet gør det muligt at oprette et listeelement for hvert track, så vi kan vise alle numre i albummet.
+    for (let i = 0; i < album.tracklist.length; i++) {
+      const track = album.tracklist[i];
+      const trackItem = document.createElement('li'); // Opretter en li-element for hvert track (liste)
+      trackItem.className = 'track-item';
+      
+// Track titel
+const trackTitle = document.createElement('span'); // Opretter et span-element til track-titlen
+trackTitle.className = 'track-title'; // Tildeler klassen 'track-title' til trackTitle for styling
+trackTitle.textContent = `${track.trackNumber}. ${track.trackTitle}`; // Sætter tekstindholdet til tracknummer og titel
+
+// Tid display
+const timeDisplay = document.createElement('span'); // Opretter et span-element til at vise tracktiden
+timeDisplay.className = 'time-display'; // Tildeler klassen 'time-display' til timeDisplay for styling
+timeDisplay.textContent = `${track.trackTimeInSeconds} sek.`; // Tildeler sekunder til timeDisplay uden if-statement, da jeg ved, at alle tracks har en værdi for tid
+
+
+if (track.trackTimeInSeconds === 300) {
+  trackItem.addEventListener('mouseover', function() {
+    console.log('Godt du er vågen'); // Viser beskeden, når musen hoverer over elementet med 300 sekunder
+  });
+  trackItem.addEventListener('mouseout', function() {
+    console.clear(); // Rydder beskeden, når musen fjernes
+  });
+}
+// Tilføj elementer til track item
+trackItem.appendChild(trackTitle); // Tilføjer track-titlen til trackItem (listeelementet)
+trackItem.appendChild(timeDisplay); // Tilføjer tiden til trackItem
+trackList.appendChild(trackItem); // Tilføjer hele trackItem til trackListen
+    }
+    trackListContent.appendChild(trackList);
+  }
 }
 //Magic-spell kopieret
 async function fetchContent(url) {
