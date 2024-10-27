@@ -123,10 +123,11 @@ timeDisplay.textContent = `${track.trackTimeInSeconds} sek.`; // Tildeler sekund
 
 if (track.trackTimeInSeconds === 300) {
   trackItem.addEventListener('mouseover', function() {
-    console.log('Godt du er vågen'); // Viser beskeden, når musen hoverer over elementet med 300 sekunder
+    console.log('Godt du er vågen. Hvis du fjerner musen rydder du konsollogen 😱'); // Viser beskeden, når musen hoverer over elementet med 300 sekunder
   });
   trackItem.addEventListener('mouseout', function() {
     console.clear(); // Rydder beskeden, når musen fjernes
+    console.log('Bare rolig, du kan bare refreshe side')
   });
 }
 // Tilføj elementer til track item
