@@ -121,15 +121,21 @@ timeDisplay.className = 'time-display'; // Tildeler klassen 'time-display' til t
 timeDisplay.textContent = `${track.trackTimeInSeconds} sek.`; // Tildeler sekunder til timeDisplay uden if-statement, da jeg ved, at alle tracks har en værdi for tid
 
 
+// Kontrollerer om trackTimeInSeconds er lig med 300
 if (track.trackTimeInSeconds === 300) {
+  // Tilføjer en event listener til trackItem for mouseover
   trackItem.addEventListener('mouseover', function() {
-    console.log('Godt du er vågen. Hvis du fjerner musen rydder du konsollogen 😱'); // Viser beskeden, når musen hoverer over elementet med 300 sekunder
+      console.log('Godt du er vågen. Hvis du fjerner musen rydder du konsollogen 😱. Du kan bare refreshe siden'); // Viser besked ved mouseover
   });
+
+  // Tilføjer en event listener til trackItem for mouseout
   trackItem.addEventListener('mouseout', function() {
-    console.clear(); // Rydder beskeden, når musen fjernes
-    console.log('Bare rolig, du kan bare refreshe side')
+      console.clear(); // Rydder konsollen ved mouseout
+      
   });
 }
+
+
 // Tilføj elementer til track item
 trackItem.appendChild(trackTitle); // Tilføjer track-titlen til trackItem (listeelementet)
 trackItem.appendChild(timeDisplay); // Tilføjer tiden til trackItem
