@@ -59,6 +59,8 @@ th, td {
     border-radius: 15px; /* Giver knappen rundede hjørner */
     cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
     transition: background-color 0.3s; /* Giver en glidende overgang, når baggrundsfarven ændres */
+    padding: 5px 10px;
+  
   }
   
   /* Styling for knap hover effekt */
