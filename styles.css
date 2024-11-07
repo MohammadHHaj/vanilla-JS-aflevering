@@ -1,99 +1,105 @@
 /* Styling for tabel celler */
-th, td {
-    border: 1px solid #e2e8f0; /* Sætter en grænse om cellerne, så de ser pæne ud */
-    padding: 12px; /* Giver lidt plads inde i cellerne */
-    text-align: left; /* Justerer teksten til venstre, så det ser bedre ud */
-  }
-  
-  /* Styling for tabel overskrifter */
-  th {
-    background-color: #edf2f7; /* Giver overskrifterne en lys baggrundsfarve */
-    font-weight: bold; /* Gør teksten i overskrifterne fed, så de skiller sig ud */
-  }
-  
-  /* Styling for album tabellen */
-  #albumTable {
-    width: 65%; /* Sætter bredden af tabellen til 45% af sin beholder */
-    border-collapse: collapse; /* Fjerner mellemrum mellem cellerne, så det ser mere samlet ud */
-    margin-top: 16px; /* Lægger lidt plads ovenfor tabellen */
-    background-color: #ffffff; /* Sætter baggrundsfarven til hvid */
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.6); /* Giver tabellen lidt skygge for dybde */
-    margin-left: 35px; /* Lægger lidt plads til venstre for tabellen */
-  }
-  
-  /* Styling for tracklist boksen */
-  #tracklistBox {
-    width: 25%; /* Giver tracklist-boksen samme bredde som tabellen */
-    background-color: #f7fafc; /* Sætter en lys blågrå farve som baggrund */
-    border: 1px solid #e2e8f0; /* Sætter en grænse rundt om boksen */
-    padding: 16px; /* Lægger lidt plads indeni boksen */
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.6); /* Tilføjer skygge for et mere visuelt udtryk */
-    margin-top: 16px; /* Lægger plads ovenfor boksen */
-    margin-right: 35px; /* Lægger plads til højre for boksen */
-  }
-  
-  /* Styling for hoved containeren */
-  #musicArchiveContainer {
-    display: flex; /* Gør containeren til en flexbox, så elementerne kan placeres pænt */
-    justify-content: space-between; /* Fordeler elementerne med plads imellem */
-    align-items: flex-start; /* Justerer elementerne, så de starter fra toppen */
-  }
-  
-  /* Styling for overskrifter */
-  h1, h2, h3 {
-    text-align: center; /* Centrerer overskrifterne, så de ser bedre ud */
-    color: #2b6cb0; /* Giver overskrifterne en blå farve */
-  }
-  
-  /* Styling for lister */
-  ul {
-    list-style: none; /* Fjerner punkttegn fra ul-elementet */
-    
-  }
-  
-  /* Styling for knapper */
-  button {
-    background-color: #2b6cb0; /* Giver knappen en blå baggrund */
-    color: white; /* Sætter teksten i knappen til hvid */
-    border: none; /* Fjerner kantlinje fra knappen */
-    border-radius: 15px; /* Giver knappen rundede hjørner */
-    cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
-    transition: background-color 0.3s; /* Giver en glidende overgang, når baggrundsfarven ændres */
-    padding: 5px 10px;
-  
-  }
-  
-  /* Styling for knap hover effekt */
-  button:hover {
-    background-color: #3182ce; /* Ændrer baggrundsfarven, når man holder musen over knappen */
-    transform: scale(1.05); /* Gør knappen lidt større, når den er aktiv */
-  }
-  
-  /* Styling for track items */
-  .track-item {
-    display: flex; /* Gør track item til en flexbox */
-    justify-content: space-between; /* Placerer indhold med mellemrum */
-    align-items: center; /* Centrerer indhold vertikalt */
-    padding: 4px 6px; /* Tilføjer padding på alle sider */
-    border-bottom: 1px solid #e2e8f0; /* Tilføjer en tynd linje mellem tracks */
-    cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
-    transition: background-color 0.2s; /* Tilføjer smooth transition ved hover */
-  }
-  
-  .track-item:hover {
-    background-color: #edf2f7; /* Lyser baggrunden op ved hover */
-  }
-  
-  /* Styling for time display */
-  .time-display {
-    color: #0264f6a6; /* Giver tiden en mere gennemsigtighed */
-    font-size: 0.9em; /* Gør tekststørrelsen lidt mindre */
-    margin-left: 16px; /* Tilføjer afstand fra titlen */
-    opacity: 0; /* Starter usynlig */
-    transition: opacity 0.2s; /* Smooth transition for opacity */
-  }
-  
-  /* Viser tiden når der hoveres over track-item */
-  .track-item:hover .time-display {
-    opacity: 1; /* Gør tiden synlig ved hover */
-  }
+th,
+td {
+  border: 1px solid #e2e8f0; /* Sætter en grænse om cellerne, så de ser pæne ud */
+  padding: 12px; /* Giver lidt plads inde i cellerne */
+  text-align: left; /* Justerer teksten til venstre, så det ser bedre ud */
+}
+
+/* Styling for tabel overskrifter */
+th {
+  background-color: #edf2f7; /* Giver overskrifterne en lys baggrundsfarve */
+  font-weight: bold; /* Gør teksten i overskrifterne fed, så de skiller sig ud */
+}
+
+/* Styling for album tabellen */
+#albumTable {
+  width: 65%; /* Sætter bredden af tabellen til 65% af sin beholder */
+  border-collapse: collapse; /* Fjerner mellemrum mellem cellerne, så det ser mere samlet ud */
+  margin-top: 16px; /* Lægger lidt plads ovenfor tabellen */
+  background-color: #ffffff; /* Sætter baggrundsfarven til hvid */
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.6); /* Giver tabellen lidt skygge for dybde */
+  margin-left: 35px; /* Lægger lidt plads til venstre for tabellen */
+  /* height: 85vh; /* Sætter højden til 80% af view-port */
+}
+
+/* Styling for tracklist boksen */
+#tracklistBox {
+  width: 25%; /* Sætter bredden af tabellen til 25% af sin beholder */
+  background-color: #f7fafc; /* Sætter en lys blågrå farve som baggrund */
+  border: 1px solid #e2e8f0; /* Sætter en grænse rundt om boksen */
+  padding: 16px; /* Lægger lidt plads indeni boksen */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.6); /* Tilføjer skygge for et mere visuelt udtryk */
+  margin-top: 16px; /* Lægger plads ovenfor boksen */
+  margin-right: 35px; /* Lægger plads til højre for boksen */
+}
+
+/* Styling for hoved containeren */
+#musicArchiveContainer {
+  display: flex; /* Gør containeren til en flexbox, så elementerne kan placeres pænt */
+  justify-content: space-between; /* Fordeler elementerne med plads imellem */
+  align-items: flex-start; /* Justerer elementerne, så de starter fra toppen */
+}
+
+/* Styling for overskrifter */
+h1,
+h2,
+h3 {
+  text-align: center; /* Centrerer overskrifterne, så de ser bedre ud */
+  color: #2b6cb0; /* Giver overskrifterne en blå farve */
+}
+
+/* Styling for lister */
+ul {
+  list-style: none; /* Fjerner punkttegn fra ul-elementet */
+}
+
+/* Styling for knapper */
+button {
+  background-color: #2b6cb0; /* Giver knappen en blå baggrund */
+  color: white; /* Sætter teksten i knappen til hvid */
+  border: none; /* Fjerner kantlinje fra knappen */
+  border-radius: 15px; /* Giver knappen rundede hjørner */
+  cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
+  transition: background-color 0.3s; /* Giver en glidende overgang, når baggrundsfarven ændres */
+  padding: 5px 10px;
+}
+
+/* Styling for knap hover effekt */
+button:hover {
+  background-color: #3182ce; /* Ændrer baggrundsfarven, når man holder musen over knappen */
+  transform: scale(1.05); /* Gør knappen lidt større, når den er aktiv */
+}
+
+/* Styling for track items */
+.track-item {
+  display: flex; /* Gør track item til en flexbox */
+  justify-content: space-between; /* Placerer indhold med mellemrum */
+  /* align-items: center; /* Centrerer indhold vertikalt */
+  padding: 4px 6px; /* Tilføjer padding på alle sider */
+  border-bottom: 1px solid #e2e8f0; /* Tilføjer en tynd linje mellem tracks */
+  cursor: pointer; /* Skifter musemarkøren til hånd, når man holder over knappen */
+  transition: background-color 0.3s; /* Tilføjer smooth transition ved hover */
+}
+
+.track-item:hover {
+  background-color: #edf2f7; /* Lyser baggrunden op ved hover */
+}
+
+/* Styling for time display */
+.time-display {
+  color: #0264f6a6; /* Giver tiden en mere gennemsigtighed */
+  font-size: 0.9em; /* Gør tekststørrelsen lidt mindre */
+  margin-left: 16px; /* Tilføjer afstand fra titlen */
+  opacity: 0; /* Starter usynlig */
+  transition: opacity 0.2s; /* Smooth transition for opacity */
+}
+
+/* Viser tiden når der hoveres over track-item */
+.track-item:hover .time-display {
+  opacity: 1; /* Gør tiden synlig ved hover */
+}
+/* Centrerer indholdet i den celle, der indeholder knappen */
+#albumTable td:nth-child(5) {
+  text-align: center;
+}
